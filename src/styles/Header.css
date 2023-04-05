@@ -1,0 +1,12 @@
+.header {
+    padding: 40px;
+    background-color: aliceblue;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.storeName {
+    font-size: 3rem;
+}

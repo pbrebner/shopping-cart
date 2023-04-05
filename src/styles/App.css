@@ -1,1 +1,13 @@
 /* Stylesheet for App */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 200px 1fr 50px;
+}
