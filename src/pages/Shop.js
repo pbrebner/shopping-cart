@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 import "../styles/Shop.css";
 
 function Shop() {
@@ -29,11 +30,11 @@ function Shop() {
     return (
         <div className="shop">
             <h2 className="pageHeading">Shop Page</h2>
-            {productList.map((product) => (
-                <h3 key={product.id}>
-                    <Link to={`/shop/${product.id}`}>{product.title}</Link>
-                </h3>
-            ))}
+            <div className="productCards">
+                {productList.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
+            </div>
         </div>
     );
 }

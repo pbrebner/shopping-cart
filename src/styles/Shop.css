@@ -5,3 +5,24 @@
     gap: 40px;
     align-items: center;
 }
+
+/* Styles for Product Cards*/
+
+.productCards {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    gap: 30px;
+}
+
+.productCard {
+    padding: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.productCardImage {
+    height: 160px;
+}
