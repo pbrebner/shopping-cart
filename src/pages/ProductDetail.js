@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useMatch } from "react-router-dom";
 import "../styles/ProductDetails.css";
 
-function Product() {
+function Product({ addCartItem, incrementCart }) {
     let [productInfo, setProductInfo] = useState({});
     let [qty, setQty] = useState(1);
     const match = useMatch("/shop/:id");
@@ -20,7 +20,6 @@ function Product() {
             `https://fakestoreapi.com/products/${match.params.id}`
         );
         const product = await productData.json();
-        console.log(product.rating.rate);
         return product;
     }
 
@@ -50,7 +49,15 @@ function Product() {
                         <button className="qtyBtn">+</button>
                     </div>
                 </div>
-                <button className="addCartBtn">Add to Cart</button>
+                <button
+                    className="addCartBtn"
+                    onClick={() => {
+                        addCartItem(productInfo, qty);
+                        incrementCart(qty);
+                    }}
+                >
+                    Add to Cart
+                </button>
             </div>
         </div>
     );
