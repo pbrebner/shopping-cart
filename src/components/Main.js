@@ -4,15 +4,25 @@ import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import Contact from "../pages/Contact";
 import Product from "../pages/ProductDetail";
+import Cart from "../pages/Cart";
 
-function Main() {
+function Main({ cartItems, addCartItem, incrementCart }) {
     return (
         <main className="main">
             <Routes>
-                <Route path="/" exact Component={Home} />
-                <Route path="/shop" exact Component={Shop} />
-                <Route path="/shop/:id" Component={Product} />
-                <Route path="/contact" Component={Contact} />
+                <Route path="/" exact element={<Home />} />
+                <Route path="/shop" exact element={<Shop />} />
+                <Route
+                    path="/shop/:id"
+                    element={
+                        <Product
+                            addCartItem={addCartItem}
+                            incrementCart={incrementCart}
+                        />
+                    }
+                />
+                <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+                <Route path="/contact" element={<Contact />} />
             </Routes>
         </main>
     );
