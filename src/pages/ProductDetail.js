@@ -5,6 +5,7 @@ import "../styles/ProductDetails.css";
 function Product({ addCartItem, incrementCart }) {
     let [productInfo, setProductInfo] = useState({});
     let [qty, setQty] = useState(1);
+
     const match = useMatch("/shop/:id");
 
     useEffect(() => {
@@ -21,6 +22,18 @@ function Product({ addCartItem, incrementCart }) {
         );
         const product = await productData.json();
         return product;
+    }
+
+    function incrementQty() {
+        let currentQty = qty;
+        setQty(currentQty + 1);
+    }
+
+    function decrementQty() {
+        let currentQty = qty;
+        if (currentQty !== 1) {
+            setQty(currentQty - 1);
+        }
     }
 
     return (
@@ -44,9 +57,13 @@ function Product({ addCartItem, incrementCart }) {
                 <div className="qty">
                     <p>QTY:</p>
                     <div className="qtyControls">
-                        <button className="qtyBtn">-</button>
+                        <button className="qtyBtn" onClick={decrementQty}>
+                            -
+                        </button>
                         <div className="qtyDisplay">{qty}</div>
-                        <button className="qtyBtn">+</button>
+                        <button className="qtyBtn" onClick={incrementQty}>
+                            +
+                        </button>
                     </div>
                 </div>
                 <button
