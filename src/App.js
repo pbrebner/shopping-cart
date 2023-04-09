@@ -36,6 +36,7 @@ function App() {
         currentItemList.push({
             id: id,
             title: productInfo.title,
+            image: productInfo.image,
             price: productInfo.price,
             size: size,
             qty: qty,
