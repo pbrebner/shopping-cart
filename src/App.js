@@ -19,12 +19,13 @@ function App() {
         setCartNumber(currentNumber + decrementValue);
     }
 
-    function addCartItem(productInfo, qty) {
-        console.log(productInfo);
+    function addCartItem(productInfo, size, qty) {
         let currentItemList = cartItems;
+        let id = size.charAt(0) + productInfo.id;
+
         //Need to check current cart items and add to qty if item already in cart
         for (const item of currentItemList) {
-            if (item.id === productInfo.id) {
+            if (item.id === id) {
                 item.qty = item.qty + qty;
                 //console.log(currentItemList);
                 setCartItems(currentItemList);
@@ -33,9 +34,10 @@ function App() {
         }
         //If no repeated item, append to list (id, title, price, numberOfItems)
         currentItemList.push({
-            id: productInfo.id,
+            id: id,
             title: productInfo.title,
             price: productInfo.price,
+            size: size,
             qty: qty,
         });
 
