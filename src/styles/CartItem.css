@@ -1,0 +1,27 @@
+.cartItem {
+    padding: 30px;
+    border: 2px solid black;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 80px 90px 40px 5px;
+    gap: 30px;
+}
+
+.cartItem div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartItemImage {
+    height: 160px;
+}
+
+.deleteCartItemBtn {
+    cursor: pointer;
+
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    background-color: white;
+}
