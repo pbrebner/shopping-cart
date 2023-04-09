@@ -32,6 +32,11 @@
     height: 60px;
 }
 
+.selectedSize {
+    background-color: blue;
+    color: white;
+}
+
 .qtyControls {
     padding: 5px;
     width: 60px;
@@ -54,4 +59,8 @@
     padding: 10px;
     width: 200px;
     font-size: 1rem;
+}
+
+.hidePrompt {
+    display: none;
 }

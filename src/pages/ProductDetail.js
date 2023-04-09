@@ -5,6 +5,7 @@ import "../styles/ProductDetails.css";
 function Product({ addCartItem, incrementCart }) {
     let [productInfo, setProductInfo] = useState({});
     let [qty, setQty] = useState(1);
+    let [sizeSelection, setSizeSelection] = useState("");
 
     const match = useMatch("/shop/:id");
 
@@ -36,6 +37,32 @@ function Product({ addCartItem, incrementCart }) {
         }
     }
 
+    function handleSizeSelection(e) {
+        const selectSizePrompt = document.querySelector(".selectSizePrompt");
+        const sizeBtns = document.querySelectorAll(".sizeBtn");
+
+        selectSizePrompt.classList.add("hidePrompt");
+
+        sizeBtns.forEach((btn) => {
+            btn.classList.remove("selectedSize");
+        });
+
+        let targetBtn = e.target;
+        targetBtn.classList.add("selectedSize");
+        setSizeSelection(targetBtn.id);
+    }
+
+    function handleAddCart() {
+        if (sizeSelection === "") {
+            const selectSizePrompt =
+                document.querySelector(".selectSizePrompt");
+            selectSizePrompt.classList.remove("hidePrompt");
+        } else {
+            addCartItem(productInfo, sizeSelection, qty);
+            incrementCart(qty);
+        }
+    }
+
     return (
         <div className="productDetails">
             <div className="productImages">
@@ -48,10 +75,34 @@ function Product({ addCartItem, incrementCart }) {
                 <div className="sizes">
                     <p>Sizes:</p>
                     <div className="sizeBtns">
-                        <button className="sizeBtn smallBtn">Small</button>
-                        <button className="sizeBtn mediumBtn">Medium</button>
-                        <button className="sizeBtn largeBtn">Large</button>
-                        <button className="sizeBtn xLargeBtn">X-Large</button>
+                        <button
+                            id="small"
+                            className="sizeBtn smallBtn"
+                            onClick={handleSizeSelection}
+                        >
+                            Small
+                        </button>
+                        <button
+                            id="medium"
+                            className="sizeBtn mediumBtn"
+                            onClick={handleSizeSelection}
+                        >
+                            Medium
+                        </button>
+                        <button
+                            id="large"
+                            className="sizeBtn largeBtn"
+                            onClick={handleSizeSelection}
+                        >
+                            Large
+                        </button>
+                        <button
+                            id="x-large"
+                            className="sizeBtn xLargeBtn"
+                            onClick={handleSizeSelection}
+                        >
+                            X-Large
+                        </button>
                     </div>
                 </div>
                 <div className="qty">
@@ -66,15 +117,12 @@ function Product({ addCartItem, incrementCart }) {
                         </button>
                     </div>
                 </div>
-                <button
-                    className="addCartBtn"
-                    onClick={() => {
-                        addCartItem(productInfo, qty);
-                        incrementCart(qty);
-                    }}
-                >
+                <button className="addCartBtn" onClick={handleAddCart}>
                     Add to Cart
                 </button>
+                <p className="selectSizePrompt hidePrompt">
+                    Please select a size
+                </p>
             </div>
         </div>
     );
