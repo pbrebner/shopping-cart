@@ -16,7 +16,7 @@ function App() {
 
     function decrementCart(decrementValue = 1) {
         let currentNumber = cartNumber;
-        setCartNumber(currentNumber + decrementValue);
+        setCartNumber(currentNumber - decrementValue);
     }
 
     function addCartItem(productInfo, size, qty) {
@@ -27,11 +27,12 @@ function App() {
         for (const item of currentItemList) {
             if (item.id === id) {
                 item.qty = item.qty + qty;
-                //console.log(currentItemList);
+                incrementCart(qty);
                 setCartItems(currentItemList);
                 return;
             }
         }
+
         //If no repeated item, append to list (id, title, price, numberOfItems)
         currentItemList.push({
             id: id,
@@ -42,9 +43,35 @@ function App() {
             qty: qty,
         });
 
-        //console.log(currentItemList);
-
+        incrementCart(qty);
         setCartItems(currentItemList);
+    }
+
+    function deleteCartItem(item) {
+        const updatedCart = cartItems.filter(
+            (cartItem) => cartItem.id !== item.id
+        );
+        decrementCart(item.qty);
+        setCartItems(updatedCart);
+    }
+
+    function updateCartItemQty(item, newQtyValue) {
+        let updatedCart = cartItems.slice();
+
+        for (const cartItem of updatedCart) {
+            if (cartItem.id === item.id) {
+                let currentQty = cartItem.qty;
+                if (currentQty < newQtyValue) {
+                    incrementCart(newQtyValue - currentQty);
+                } else if (currentQty > newQtyValue) {
+                    decrementCart(currentQty - newQtyValue);
+                }
+
+                cartItem.qty = newQtyValue;
+            }
+        }
+
+        setCartItems(updatedCart);
     }
 
     return (
@@ -54,7 +81,8 @@ function App() {
                 <Main
                     cartItems={cartItems}
                     addCartItem={addCartItem}
-                    incrementCart={incrementCart}
+                    deleteCartItem={deleteCartItem}
+                    updateCartItemQty={updateCartItemQty}
                 />
                 <Footer />
             </div>

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useMatch } from "react-router-dom";
 
 import CartItem from "../components/CartItem";
+import { priceAddZero } from "../utils";
 import "../styles/Cart.css";
 
-function Cart({ cartItems }) {
+function Cart({ cartItems, deleteCartItem, updateCartItemQty }) {
     let [cartTotal, setCartTotal] = useState(0);
 
     useEffect(() => {
@@ -12,7 +13,7 @@ function Cart({ cartItems }) {
         for (const item of cartItems) {
             total += item.price * item.qty;
         }
-        setCartTotal(total);
+        setCartTotal(priceAddZero(total));
     });
 
     return (
@@ -29,7 +30,12 @@ function Cart({ cartItems }) {
                         </div>
                     </div>
                     {cartItems.map((item) => (
-                        <CartItem key={item.id} item={item} />
+                        <CartItem
+                            key={item.id}
+                            item={item}
+                            deleteCartItem={deleteCartItem}
+                            updateCartItemQty={updateCartItemQty}
+                        />
                     ))}
                 </div>
                 <div className="orderSummary">

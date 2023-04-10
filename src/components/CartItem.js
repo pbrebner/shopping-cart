@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { priceAddZero } from "../utils";
 import "../styles/CartItem.css";
 
-function CartItem({ item }) {
+function CartItem({ item, deleteCartItem, updateCartItemQty }) {
     return (
         <div className="cartItem">
             <img className="cartItemImage" src={item.image} alt="Item Image" />
@@ -13,11 +14,24 @@ function CartItem({ item }) {
                 </p>
             </div>
             <div>
-                <p>{item.qty}</p>
+                <input
+                    type={"number"}
+                    defaultValue={item.qty}
+                    min={1}
+                    max={99}
+                    onChange={(e) => {
+                        updateCartItemQty(item, e.target.value);
+                    }}
+                ></input>
             </div>
-            <p>{item.price}</p>
-            <p>{item.price * item.qty}</p>
-            <button className="deleteCartItemBtn">X</button>
+            <p>${item.price}</p>
+            <p>${priceAddZero(item.price * item.qty)}</p>
+            <button
+                className="deleteCartItemBtn"
+                onClick={() => deleteCartItem(item)}
+            >
+                X
+            </button>
         </div>
     );
 }
