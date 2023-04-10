@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useMatch } from "react-router-dom";
+import { priceAddZero } from "../utils";
 import "../styles/ProductDetails.css";
 
-function Product({ addCartItem, incrementCart }) {
+function Product({ addCartItem }) {
     let [productInfo, setProductInfo] = useState({});
     let [qty, setQty] = useState(1);
     let [sizeSelection, setSizeSelection] = useState("");
@@ -22,6 +23,8 @@ function Product({ addCartItem, incrementCart }) {
             `https://fakestoreapi.com/products/${match.params.id}`
         );
         const product = await productData.json();
+        product.price = priceAddZero(product.price);
+
         return product;
     }
 
@@ -59,7 +62,6 @@ function Product({ addCartItem, incrementCart }) {
             selectSizePrompt.classList.remove("hidePrompt");
         } else {
             addCartItem(productInfo, sizeSelection, qty);
-            incrementCart(qty);
         }
     }
 

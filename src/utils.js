@@ -1,14 +1,8 @@
 // Utility functions for Shopping Cart
 
 function priceAddZero(price) {
-    const arr = price.split(".");
-    if (arr[1].length === 1) {
-        arr[1] = arr[1] + "0";
-    }
-
-    console.log(arr);
-
-    return arr[0] + "." + arr[1];
+    let newPrice = price.toFixed(2);
+    return newPrice;
 }
 
 export { priceAddZero };
