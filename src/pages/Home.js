@@ -12,7 +12,6 @@ function Home() {
 
     return (
         <div className="home">
-            <h2 className="pageHeading">Home Page</h2>
             <button className="shopBtn" onClick={navigateShop}>
                 Start Shopping
             </button>
