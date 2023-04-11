@@ -29,14 +29,20 @@ function Cart({ cartItems, deleteCartItem, updateCartItemQty }) {
                             <p>TOTAL</p>
                         </div>
                     </div>
-                    {cartItems.map((item) => (
-                        <CartItem
-                            key={item.id}
-                            item={item}
-                            deleteCartItem={deleteCartItem}
-                            updateCartItemQty={updateCartItemQty}
-                        />
-                    ))}
+                    {cartItems.length === 0 ? (
+                        <p className="emptyCart">
+                            There is currently nothing in your cart
+                        </p>
+                    ) : (
+                        cartItems.map((item) => (
+                            <CartItem
+                                key={item.id}
+                                item={item}
+                                deleteCartItem={deleteCartItem}
+                                updateCartItemQty={updateCartItemQty}
+                            />
+                        ))
+                    )}
                 </div>
                 <div className="orderSummary">
                     <div className="orderSummaryDetails">
