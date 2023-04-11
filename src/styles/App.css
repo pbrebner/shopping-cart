@@ -6,8 +6,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-color: #27474e;
+    --accent-color: #fe4a49;
+    --font-color: #e1d89f;
+    --font-color-alt: #d8973c;
+}
+
 .app {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 200px 1fr 50px;
+    grid-template-rows: 160px 1fr 50px;
 }

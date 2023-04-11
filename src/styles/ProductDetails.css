@@ -30,11 +30,14 @@
 .sizeBtn {
     width: 60px;
     height: 60px;
+
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .selectedSize {
-    background-color: blue;
-    color: white;
+    font-weight: 600;
+    border: 2px solid black;
 }
 
 .qtyControls {
@@ -56,9 +59,19 @@
 }
 
 .addCartBtn {
+    background-color: var(--accent-color);
+    color: white;
     padding: 10px;
     width: 200px;
     font-size: 1rem;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 2px;
+}
+
+.addCartBtn:hover {
+    filter: brightness(120%);
 }
 
 .hidePrompt {

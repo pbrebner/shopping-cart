@@ -1,9 +1,9 @@
 .cartItem {
     padding: 30px;
-    border: 2px solid black;
+    border: 2px solid rgb(122, 122, 122);
 
     display: grid;
-    grid-template-columns: 1fr 2fr 80px 90px 40px 5px;
+    grid-template-columns: 1fr 2fr 90px 90px 50px 5px;
     gap: 30px;
 }
 

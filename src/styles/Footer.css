@@ -1,5 +1,6 @@
 .footer {
-    background-color: aliceblue;
+    background-color: var(--main-color);
+    color: var(--font-color);
 
     display: flex;
     justify-content: center;

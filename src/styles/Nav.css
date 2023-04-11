@@ -7,6 +7,12 @@
 
 .navLink {
     font-size: 2rem;
-    color: black;
+    color: var(--font-color);
     text-decoration: none;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+    filter: brightness(120%);
+    scale: 105%;
 }
