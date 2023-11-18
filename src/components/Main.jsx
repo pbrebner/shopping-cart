@@ -5,7 +5,7 @@ import Contact from "../pages/Contact";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 
-import "./styles/main.css";
+import "./styles/Main.css";
 
 function Main() {
     return (

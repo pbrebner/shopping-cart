@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import Nav from "./Nav";
-import "./styles/header.css";
+import "./styles/Header.css";
 import cartIcon from "../assets/shopping-cart.png";
 
 function Header({ cartNumber }) {
