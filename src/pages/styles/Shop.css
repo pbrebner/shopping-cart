@@ -1,0 +1,7 @@
+.shopPage {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
