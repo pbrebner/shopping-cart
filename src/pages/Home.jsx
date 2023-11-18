@@ -8,7 +8,8 @@ function Home() {
     }
 
     return (
-        <div className="home">
+        <div className="homePage">
+            <h2>This is the Home Page</h2>
             <button className="shopBtn" onClick={navigateShop}>
                 Start Shopping
             </button>

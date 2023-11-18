@@ -1,0 +1,18 @@
+.navLinks {
+    list-style: none;
+
+    display: flex;
+    gap: 60px;
+}
+
+.navLink {
+    font-size: 1.4rem;
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+    filter: brightness(120%);
+    scale: 105%;
+}

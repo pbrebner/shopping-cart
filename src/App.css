@@ -1,1 +1,21 @@
+/* Stylesheet for App */
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+:root {
+    --main-color: #27474e;
+    --accent-color: #fe4a49;
+    --font-color: #e1d89f;
+    --font-color-alt: #d8973c;
+}*/
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

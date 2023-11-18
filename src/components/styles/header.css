@@ -1,0 +1,13 @@
+.header {
+    padding: 20px;
+}
+
+.headerInnerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cartIcon {
+    height: 60px;
+}
