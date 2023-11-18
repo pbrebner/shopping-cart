@@ -1,0 +1,37 @@
+/* Styles for Product Cards*/
+
+.productCards {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    gap: 30px;
+}
+
+.productCard {
+    padding: 20px;
+    border: 2px solid rgb(122, 122, 122);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.productCardImage {
+    height: 160px;
+}
+
+.detailsBtn {
+    cursor: pointer;
+    background-color: rgb(62, 68, 81);
+    color: white;
+    font-weight: 600;
+    padding: 5px 10px;
+
+    border: none;
+    border-radius: 3px;
+}
+
+.detailsBtn:hover {
+    filter: brightness(120%);
+}
