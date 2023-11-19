@@ -14,11 +14,12 @@ function Header({ cartNumber }) {
     return (
         <header className="header">
             <div className="headerInnerWrapper">
-                <h1 className="storeName">Store Name</h1>
+                <h1 className="storeName">Fake Store</h1>
                 <Nav />
                 <button className="cartBtn" onClick={navigateCart}>
-                    {cartNumber}
                     <img className="cartIcon" src={cartIcon} alt="Cart Icon" />
+                    <div>YOUR CART</div>
+                    <div>({cartNumber})</div>
                 </button>
             </div>
         </header>

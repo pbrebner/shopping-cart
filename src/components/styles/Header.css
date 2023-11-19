@@ -1,5 +1,6 @@
 .header {
     padding: 20px;
+    box-shadow: 2px 2px 5px rgb(196, 195, 195);
 }
 
 .headerInnerWrapper {
@@ -8,6 +9,26 @@
     justify-content: space-between;
 }
 
+.cartBtn {
+    padding: 7px;
+    font-size: 0.9rem;
+    background: none;
+    border: 2px solid rgb(122, 122, 122);
+    border-radius: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    cursor: pointer;
+}
+
+.cartBtn:hover {
+    background-color: rgb(62, 68, 81);
+    color: white;
+}
+
 .cartIcon {
-    height: 60px;
+    height: 25px;
 }
