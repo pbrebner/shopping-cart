@@ -7,14 +7,26 @@ import Cart from "../pages/Cart";
 
 import "./styles/Main.css";
 
-function Main() {
+function Main({ cartItems, addCartItem, deleteCartItem, updateCartItemQty }) {
     return (
         <main className="main">
             <Routes>
                 <Route path="/" exact element={<Home />} />
                 <Route path="/shop" exact element={<Shop />} />
-                <Route path="/shop/:id" element={<ProductDetails />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route
+                    path="/shop/:id"
+                    element={<ProductDetails addCartItem={addCartItem} />}
+                />
+                <Route
+                    path="/cart"
+                    element={
+                        <Cart
+                            cartItems={cartItems}
+                            deleteCartItem={deleteCartItem}
+                            updateCartItemQty={updateCartItemQty}
+                        />
+                    }
+                />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
         </main>
