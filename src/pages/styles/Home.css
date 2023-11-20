@@ -1,5 +1,6 @@
 .homePage {
-    min-height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
 
     background-image: url("../../assets/light-clothing.jpg");
     background-size: cover;
