@@ -2,7 +2,7 @@
 
 ## About
 
-A simple shopping website completed as part of The ODIN Projects React curriculum. Users are able to browse fake products and add them to their cart to prepare for checkout.
+Shopping website completed as part of The ODIN Projects React curriculum. Users are able to browse fake products and add them to their cart to prepare for checkout.
 
 ## Features
 
