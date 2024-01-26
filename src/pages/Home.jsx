@@ -5,7 +5,7 @@ function Home() {
     const navigate = useNavigate();
 
     function navigateShop() {
-        navigate("/shop");
+        navigate("/shopping-cart/shop");
     }
 
     return (

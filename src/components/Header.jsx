@@ -8,7 +8,7 @@ function Header({ cartNumber }) {
     const navigate = useNavigate();
 
     function navigateCart() {
-        navigate("/cart");
+        navigate("/shopping-cart/cart");
     }
 
     return (

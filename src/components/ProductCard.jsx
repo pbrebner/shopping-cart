@@ -5,7 +5,7 @@ function ProductCard({ product }) {
     const navigate = useNavigate();
 
     function navigateDetails() {
-        navigate(`/shop/${product.id}`);
+        navigate(`/shopping-cart/shop/${product.id}`);
     }
 
     return (

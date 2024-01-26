@@ -9,7 +9,7 @@ function ProductDetails({ addCartItem }) {
     let [qty, setQty] = useState(1);
     let [sizeSelection, setSizeSelection] = useState("");
 
-    const match = useMatch("/shop/:id");
+    const match = useMatch("/shopping-cart/shop/:id");
 
     useEffect(() => {
         loadProduct();

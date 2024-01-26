@@ -11,14 +11,14 @@ function Main({ cartItems, addCartItem, deleteCartItem, updateCartItemQty }) {
     return (
         <main className="main">
             <Routes>
-                <Route path="/" exact element={<Home />} />
-                <Route path="/shop" exact element={<Shop />} />
+                <Route path="/shopping-cart" exact element={<Home />} />
+                <Route path="/shopping-cart/shop" exact element={<Shop />} />
                 <Route
-                    path="/shop/:id"
+                    path="/shopping-cart/shop/:id"
                     element={<ProductDetails addCartItem={addCartItem} />}
                 />
                 <Route
-                    path="/cart"
+                    path="/shopping-cart/cart"
                     element={
                         <Cart
                             cartItems={cartItems}
@@ -27,7 +27,7 @@ function Main({ cartItems, addCartItem, deleteCartItem, updateCartItemQty }) {
                         />
                     }
                 />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/shopping-cart/contact" element={<Contact />} />
             </Routes>
         </main>
     );
